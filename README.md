@@ -1,1 +1,1 @@
-# pythonCrashCourse
+# Repository for my Python Crash Course
