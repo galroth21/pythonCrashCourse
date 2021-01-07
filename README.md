@@ -1,1 +1,1 @@
-# Repository for my Python Crash Course
+# Repository for my Automate the Boring Stuff course
