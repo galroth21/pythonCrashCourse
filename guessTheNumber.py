@@ -1,21 +1,27 @@
 import random
 
-secretNumber = random.randint(1,100)
-print("I'm thinking of a number between 1 and 100.")
+print("Hello. What is your name?")
+name = input()    
 
-# Ask the player to guess 6 times
-for guessesTaken in range(1,7):
-    print("Take a guess:")
-    guess = int(input())
+while True:
+    print("\n" + name + ", I'm thinking of a number between 1 and 100.\n")
+    secretNumber = random.randint(1,100)
+    guess = 0
+    tries = 0
+    
+    # Ask the player to guess 6 times
+    while guess != secretNumber:
+        print("Take a guess (enter 'quit' to exit):")
+        guess = input()
+        tries = tries + 1
 
-    if guess < secretNumber:
-        print("Your guess is too low.")
-    elif guess > secretNumber:
-        print("Your guess is too high.")
-    else:
-        break       # This condition is the correct guess!
+        if guess == "quit":
+            quit()
+        elif int(guess) < secretNumber:
+            print("Your guess is too low.")
+        elif int(guess) > secretNumber:
+            print("Your guess is too high.")
+        else:
+            break       # This condition is the correct guess!
 
-if guess == secretNumber:
-    print("Good job! You guessed my number in " + str(guessesTaken) + " guesses!")
-else:
-    print("Nope. The number I was thinking of was " + str(secretNumber))
+    print("Good job! You guessed my number in " + str(tries) + " guesses!\n\n")
